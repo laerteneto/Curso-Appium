@@ -1,4 +1,4 @@
-package br.ce.laerte.appium;
+package br.ce.laerte.appium.test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,7 +24,7 @@ public class CalculadoraNote9Teste {
 
 		URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 
-		AndroidDriver<MobileElement> driver = new AndroidDriver(remoteUrl, desiredCapabilities);
+		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
 
 		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("2");
 		el1.click();
