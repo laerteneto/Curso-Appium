@@ -42,6 +42,10 @@ public class FormularioPage extends BasePage {
 	public void salvar() {
 		clicarPorTexto("SALVAR");
 	}
+	
+	public void salvarDemorado() {
+		clicarPorTexto("SALVAR DEMORADO");
+	}
 
 	public boolean checarBotaoHabilitado() {
 		return isBotaoHabilitado(By.xpath("//android.widget.TextView[@text='SALVAR']"));
