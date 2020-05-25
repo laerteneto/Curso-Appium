@@ -3,7 +3,9 @@ package br.ce.laerte.appium.page;
 import org.openqa.selenium.By;
 
 import br.ce.laerte.appium.core.BasePage;
+import br.ce.laerte.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 
 public class FormularioPage extends BasePage {
 
@@ -39,10 +41,27 @@ public class FormularioPage extends BasePage {
 		return isCheckMarcado(MobileBy.AccessibilityId("switch"));
 	}
 
+	public void clicarSeekbar(double posicao) {
+		int delta = 55; // Para ajustar a seekbar que começa um pouco depois do x dado pelo uiautomator
+
+		MobileElement seek = DriverFactory.getDriver().findElement(MobileBy.AccessibilityId("slid"));
+		int y = seek.getLocation().y + (seek.getSize().height / 2);
+
+		int xinicial = seek.getLocation().x + delta;
+		int xfinal = (int) ((seek.getSize().width - 2 * delta) * posicao);
+		int x = xinicial + xfinal;
+
+		tap(x, y);
+	}
+
+	public String obterValorSeekBar() {
+		return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text, 'Slider:')]"));
+	}
+
 	public void salvar() {
 		clicarPorTexto("SALVAR");
 	}
-	
+
 	public void salvarDemorado() {
 		clicarPorTexto("SALVAR DEMORADO");
 	}

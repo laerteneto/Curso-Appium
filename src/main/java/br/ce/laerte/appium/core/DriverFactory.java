@@ -26,7 +26,7 @@ public class DriverFactory {
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "emulator-5554");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
-		desiredCapabilities.setCapability(MobileCapabilityType.APP, "F:\\eclipse-workspace\\CursoAppium\\src\\main\\resources\\campo_treinamento.apk");
+		desiredCapabilities.setCapability(MobileCapabilityType.APP, "F:\\eclipse-workspace\\CursoAppium\\src\\main\\resources\\CTAppium_1_2.apk");
 
 		URL remoteUrl = null;
 		try {

@@ -14,7 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 public class BaseTest {
 
 	@Rule
-	public TestName testName = new TestName();
+	public TestName testName = new TestName(); // obter parametros do test para utilizar no screenshot depois
 
 	@AfterClass
 	public static void finalizarClasse() {
@@ -24,7 +24,7 @@ public class BaseTest {
 	@After
 	public void tearDown() {
 		gerarScreenShot();
-		DriverFactory.getDriver().resetApp(); // Agilizar na velocidade entre os testes. Ao invez de fehcar, faz isso
+		DriverFactory.getDriver().resetApp(); // Agilizar na velocidade entre os testes. Ao invez de fechar, faz isso
 	}
 
 	public void gerarScreenShot() {

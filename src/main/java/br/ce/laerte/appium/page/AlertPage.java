@@ -1,7 +1,5 @@
 package br.ce.laerte.appium.page;
 
-import org.openqa.selenium.By;
-
 import br.ce.laerte.appium.core.BasePage;
 
 public class AlertPage extends BasePage {
@@ -12,14 +10,6 @@ public class AlertPage extends BasePage {
 
 	public void clicarAlertaSimples() {
 		clicarPorTexto("ALERTA SIMPLES");
-	}
-
-	public String obterTituloAlerta() {
-		return obterTexto(By.id("android:id/alertTitle"));
-	}
-
-	public String obterMensagemAlerta() {
-		return obterTexto(By.id("android:id/message"));
 	}
 
 	public void clicarConfirmar() {
