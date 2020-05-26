@@ -13,6 +13,15 @@ import io.appium.java_client.TouchAction;
 
 public class BasePage {
 
+	///////// Métodos coringa pouco utilizados
+	public void esperaForcada(int tempo) {
+		try {
+			Thread.sleep(tempo);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	/////////// Métodos de escrita
 	public void escrever(By by, String texto) {
 		getDriver().findElement(by).sendKeys(texto);
@@ -34,6 +43,17 @@ public class BasePage {
 
 	public void tap(int x, int y) {
 		new TouchAction(DriverFactory.getDriver()).tap(x, y).perform();
+	}
+
+	public void tapElement(MobileElement element) {
+		int x = element.getLocation().x + (element.getSize().width / 2); // largura
+		int y = element.getLocation().y + (element.getSize().height / 2); // altura
+
+		new TouchAction(DriverFactory.getDriver()).press(x, y).waitAction(Duration.ofMillis(500)).release().perform();
+	}
+
+	public void cliqueLongo(By by) {
+		new TouchAction(DriverFactory.getDriver()).longPress(DriverFactory.getDriver().findElement(by)).perform();
 	}
 
 	/////////// Métodos de selects, combos, radio, etc

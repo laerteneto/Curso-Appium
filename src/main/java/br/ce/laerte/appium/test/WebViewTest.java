@@ -28,10 +28,10 @@ public class WebViewTest extends BaseTest {
 
 	@Test
 	public void deveFazerLogin() {
-		page.setEmail("laerteteste@hotmail.com");
+		page.setEmail("lala@a.com");
 		page.setSenha("123456");
 		page.clicarEntrar();
 
-		Assert.assertEquals("Bem vindo, Laerte!", page.obterMensagemLoginSucesso());
+		Assert.assertEquals("Bem vindo, lala!", page.obterMensagemLoginSucesso());
 	}
 }
