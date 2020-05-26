@@ -31,7 +31,6 @@ public class SwipeListTest extends BaseTest {
 
 		page.swipeElementLeft("Opção 5 (-)");
 		Assert.assertTrue(page.existeElementoPorTexto("Opção 5"));
-
 	}
 
 }

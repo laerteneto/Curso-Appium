@@ -11,8 +11,8 @@ import br.ce.laerte.appium.page.MenuPage;
 
 public class CliquesTest extends BaseTest {
 
-	MenuPage menu = new MenuPage();
-	CliquesPage page = new CliquesPage();
+	private MenuPage menu = new MenuPage();
+	private CliquesPage page = new CliquesPage();
 
 	@Before
 	public void setup() {

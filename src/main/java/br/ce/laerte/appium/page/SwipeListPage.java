@@ -6,6 +6,8 @@ import br.ce.laerte.appium.core.BasePage;
 import br.ce.laerte.appium.core.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 
 public class SwipeListPage extends BasePage {
 
@@ -25,7 +27,9 @@ public class SwipeListPage extends BasePage {
 	// tela pega o botão menos também
 	public void clicarBotaoMais() {
 		MobileElement botaoMais = DriverFactory.getDriver().findElement(By.xpath("//*[@text='(+)']/.."));
-		new TouchAction(DriverFactory.getDriver()).tap(botaoMais, -50, 0).perform();
+		new TouchAction<>(DriverFactory.getDriver())
+			.tap(TapOptions.tapOptions().withElement(ElementOption.element(botaoMais,-50,0)))
+			.perform();
 	}
 
 }
